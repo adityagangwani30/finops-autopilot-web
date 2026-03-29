@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Demo — FinOps Autopilot</title>
+  <meta name="description" content="Try the FinOps Autopilot interactive demo: upload a dataset, toggle CFO Mode, and use the savings simulator to see real-time cost optimization results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-bold">
+        <span class="text-2xl">🚀</span>
+        <span class="gradient-text">FinOps Autopilot</span>
+      </a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="nav-links" class="nav-links flex items-center gap-1">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="architecture.html" class="nav-link">How It Works</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="future.html" class="nav-link">Roadmap</a>
+        <a href="team.html" class="nav-link">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="hero-bg pt-32 pb-12 px-6">
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <div class="reveal">
+        <span class="section-label section-label-green mb-4 inline-block">🎮 Interactive</span>
+        <h1 class="text-4xl md:text-6xl font-900 mt-4">
+          Live <span class="gradient-text">Demo</span>
+        </h1>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">Experience FinOps Autopilot in action. Upload data, generate reports, toggle views, and simulate savings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOCK DASHBOARD ========== -->
+  <section class="py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card-static overflow-hidden reveal" style="border-color: rgba(0,255,136,0.15);">
+
+        <!-- Dashboard Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-white/[0.02]">
+          <div class="flex items-center gap-3">
+            <div class="pulse-dot"></div>
+            <span class="font-600 text-sm">FinOps Autopilot Dashboard</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500/60"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row">
+
+          <!-- Sidebar -->
+          <div class="w-full lg:w-56 border-b lg:border-b-0 lg:border-r border-white/5 p-4 bg-white/[0.01] flex-shrink-0">
+            <div class="space-y-1">
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-500">
+                <span>📊</span> Dashboard
+              </div>
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 text-sm hover:bg-white/5 cursor-pointer transition-colors">
+                <span>📁</span> Upload Data
+              </div>
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 text-sm hover:bg-white/5 cursor-pointer transition-colors">
+                <span>🤖</span> AI Insights
+              </div>
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 text-sm hover:bg-white/5 cursor-pointer transition-colors">
+                <span>🔁</span> Simulator
+              </div>
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 text-sm hover:bg-white/5 cursor-pointer transition-colors">
+                <span>📢</span> Reports
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Dashboard Area -->
+          <div class="flex-1 p-6">
+
+            <!-- Metric Cards Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              <div class="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Total Monthly Spend</div>
+                <div class="text-2xl font-800 text-white" id="metric-total">$47,250</div>
+                <div class="text-xs text-red-400 mt-1">↑ 12% vs last month</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Identified Waste</div>
+                <div class="text-2xl font-800 text-red-400" id="metric-waste">$15,250</div>
+                <div class="text-xs text-slate-500 mt-1">32.3% of total spend</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Potential Savings</div>
+                <div class="text-2xl font-800 text-emerald-400" id="metric-savings">$15,250</div>
+                <div class="text-xs text-emerald-400 mt-1">If all actions applied</div>
+              </div>
+              <div class="bg-white/[0.03] rounded-xl p-4 border border-white/5">
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Active Resources</div>
+                <div class="text-2xl font-800 text-blue-400">142</div>
+                <div class="text-xs text-amber-400 mt-1">23 flagged for review</div>
+              </div>
+            </div>
+
+            <!-- ---- UPLOAD ZONE ---- -->
+            <div class="mb-8" id="upload-section">
+              <h3 class="text-lg font-700 mb-4 flex items-center gap-2">
+                <span>📁</span> Step 1: Upload Dataset
+              </h3>
+              <div id="upload-zone" class="upload-zone p-10 text-center" onclick="simulateUpload()">
+                <div class="text-4xl mb-3" id="upload-icon">☁️</div>
+                <p class="text-slate-300 font-600 mb-1" id="upload-title">Drop your AWS cost CSV here</p>
+                <p class="text-sm text-slate-500" id="upload-sub">or click to browse files</p>
+                <p class="text-xs text-slate-600 mt-3">(Demo: Click to load sample dataset)</p>
+              </div>
+            </div>
+
+            <!-- ---- REPORT + CFO TOGGLE ---- -->
+            <div class="mb-8" id="report-section" style="display:none;">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                <h3 class="text-lg font-700 flex items-center gap-2">
+                  <span>🤖</span> Step 2: AI Recommendations
+                </h3>
+                <!-- Toggle -->
+                <div class="flex items-center gap-3 bg-white/[0.03] rounded-xl px-4 py-2.5 border border-white/5">
+                  <span id="demo-engLabel" class="text-xs font-600 text-emerald-400">👨‍💻 Engineer</span>
+                  <div id="demo-cfoToggle" class="toggle-track" onclick="toggleDemoCFO()">
+                    <div class="toggle-thumb"></div>
+                  </div>
+                  <span id="demo-cfoLabel" class="text-xs font-600 text-slate-500">💼 CFO</span>
+                </div>
+              </div>
+
+              <div class="space-y-3" id="recommendations">
+                <!-- Rec 1 -->
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row gap-4 items-start">
+                  <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0">🔴</div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="text-xs font-bold text-red-400 uppercase">Critical</span>
+                      <span class="text-xs text-slate-600">•</span>
+                      <span class="text-xs text-slate-500">EC2 Compute</span>
+                    </div>
+                    <p class="demo-cfo-text text-sm text-slate-300"
+                       data-engineer="Terminate 12 idle t3.large EC2 instances in us-east-1 (avg CPU utilization &lt;3% over 30 days). These instances appear to be leftover from a previous staging environment."
+                       data-cfo="Eliminate $8,400/month ($100,800/year) in compute waste from 12 unused servers. Zero operational risk — these haven't processed any workload in 30+ days.">
+                      Terminate 12 idle t3.large EC2 instances in us-east-1 (avg CPU utilization &lt;3% over 30 days). These instances appear to be leftover from a previous staging environment.
+                    </p>
+                  </div>
+                  <div class="text-right flex-shrink-0">
+                    <div class="text-lg font-800 text-emerald-400">-$8,400</div>
+                    <div class="text-xs text-slate-500">/month</div>
+                  </div>
+                </div>
+
+                <!-- Rec 2 -->
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row gap-4 items-start">
+                  <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">🟡</div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="text-xs font-bold text-amber-400 uppercase">Medium</span>
+                      <span class="text-xs text-slate-600">•</span>
+                      <span class="text-xs text-slate-500">RDS Database</span>
+                    </div>
+                    <p class="demo-cfo-text text-sm text-slate-300"
+                       data-engineer="Right-size 8 RDS instances from db.r5.2xlarge to db.r5.large. 90-day metrics show peak memory usage at 34% and CPU at 22%. Change can be applied during maintenance window."
+                       data-cfo="Right-size database infrastructure to save $4,200/month ($50,400/year). Current capacity is 3x what's actually needed — funds can be reallocated to revenue-generating projects.">
+                      Right-size 8 RDS instances from db.r5.2xlarge to db.r5.large. 90-day metrics show peak memory usage at 34% and CPU at 22%. Change can be applied during maintenance window.
+                    </p>
+                  </div>
+                  <div class="text-right flex-shrink-0">
+                    <div class="text-lg font-800 text-emerald-400">-$4,200</div>
+                    <div class="text-xs text-slate-500">/month</div>
+                  </div>
+                </div>
+
+                <!-- Rec 3 -->
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row gap-4 items-start">
+                  <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">🔵</div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="text-xs font-bold text-blue-400 uppercase">Opportunity</span>
+                      <span class="text-xs text-slate-600">•</span>
+                      <span class="text-xs text-slate-500">EBS Storage</span>
+                    </div>
+                    <p class="demo-cfo-text text-sm text-slate-300"
+                       data-engineer="Delete 340GB of unattached EBS gp3 volumes (vol-0a1b2c3, vol-0d4e5f6, +6 more) that haven't been mounted to any instance in 60+ days."
+                       data-cfo="Reclaim $2,100/month ($25,200/year) by cleaning up storage that's been sitting unused for 2+ months. Think of it as paying rent on an empty warehouse.">
+                      Delete 340GB of unattached EBS gp3 volumes (vol-0a1b2c3, vol-0d4e5f6, +6 more) that haven't been mounted to any instance in 60+ days.
+                    </p>
+                  </div>
+                  <div class="text-right flex-shrink-0">
+                    <div class="text-lg font-800 text-emerald-400">-$2,100</div>
+                    <div class="text-xs text-slate-500">/month</div>
+                  </div>
+                </div>
+
+                <!-- Rec 4 -->
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row gap-4 items-start">
+                  <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">🟣</div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="text-xs font-bold text-purple-400 uppercase">Strategic</span>
+                      <span class="text-xs text-slate-600">•</span>
+                      <span class="text-xs text-slate-500">Reserved Instances</span>
+                    </div>
+                    <p class="demo-cfo-text text-sm text-slate-300"
+                       data-engineer="Convert 5 on-demand m5.xlarge instances to 1-year No Upfront Reserved Instances. These run 24/7 for the production API cluster with consistent utilization above 70%."
+                       data-cfo="Lock in 40% discounts on 5 production servers by switching to annual pricing, saving $4,750/month ($57,000/year) with guaranteed capacity and predictable budgeting.">
+                      Convert 5 on-demand m5.xlarge instances to 1-year No Upfront Reserved Instances. These run 24/7 for the production API cluster with consistent utilization above 70%.
+                    </p>
+                  </div>
+                  <div class="text-right flex-shrink-0">
+                    <div class="text-lg font-800 text-emerald-400">-$4,750</div>
+                    <div class="text-xs text-slate-500">/month</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---- SAVINGS SLIDER ---- -->
+            <div id="slider-section" style="display:none;">
+              <h3 class="text-lg font-700 mb-4 flex items-center gap-2">
+                <span>🔁</span> Step 3: What-If Simulator
+              </h3>
+              <div class="glass-card-static p-8">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                  <!-- Slider Side -->
+                  <div class="flex-1 w-full">
+                    <label class="text-sm text-slate-400 block mb-3">Resource Optimization Level</label>
+                    <input type="range" id="savings-slider" class="range-slider mb-4" min="0" max="100" value="50"
+                           oninput="updateSavings(this.value)">
+                    <div class="flex justify-between text-xs text-slate-500">
+                      <span>0% (No changes)</span>
+                      <span id="slider-value" class="text-emerald-400 font-600">50%</span>
+                      <span>100% (Full optimization)</span>
+                    </div>
+
+                    <!-- Action Breakdown -->
+                    <div class="mt-6 space-y-2">
+                      <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Actions Included</div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Stop idle EC2 instances</span>
+                        <span class="text-emerald-400 font-600" id="action-ec2">-$4,200</span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Right-size RDS instances</span>
+                        <span class="text-emerald-400 font-600" id="action-rds">-$2,100</span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Delete unused storage</span>
+                        <span class="text-emerald-400 font-600" id="action-ebs">-$1,050</span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Reserved Instances switch</span>
+                        <span class="text-emerald-400 font-600" id="action-ri">-$2,375</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Result Side -->
+                  <div class="w-full md:w-72 flex-shrink-0">
+                    <div class="bg-white/[0.03] rounded-xl p-6 border border-white/5 text-center mb-4">
+                      <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Current Cost</div>
+                      <div class="text-3xl font-800 text-white">$47,250</div>
+                    </div>
+                    <div class="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/20 text-center mb-4">
+                      <div class="text-xs text-emerald-400 uppercase tracking-wider mb-2">Optimized Cost</div>
+                      <div class="text-3xl font-800 text-emerald-400" id="optimized-cost">$37,525</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 rounded-xl p-6 border border-emerald-500/15 text-center">
+                      <div class="text-xs text-slate-400 uppercase tracking-wider mb-2">Total Savings</div>
+                      <div class="text-4xl font-900 gradient-text" id="total-savings">$9,725</div>
+                      <div class="text-lg font-700 text-emerald-400 mt-1" id="savings-percent">20.6%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🚀</span>
+        <span class="gradient-text font-bold">FinOps Autopilot</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+        <a href="features.html" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
+        <a href="architecture.html" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a>
+        <a href="demo.html" class="text-sm text-slate-400 hover:text-white transition-colors">Demo</a>
+        <a href="future.html" class="text-sm text-slate-400 hover:text-white transition-colors">Roadmap</a>
+        <a href="team.html" class="text-sm text-slate-400 hover:text-white transition-colors">Team</a>
+      </div>
+      <p class="text-sm text-slate-500">© 2026 FinOps Autopilot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ===== DEMO PAGE INTERACTIVITY =====
+
+    // --- Simulate CSV Upload ---
+    function simulateUpload() {
+      const zone = document.getElementById('upload-zone');
+      const icon = document.getElementById('upload-icon');
+      const title = document.getElementById('upload-title');
+      const sub = document.getElementById('upload-sub');
+
+      // Loading state
+      icon.textContent = '⏳';
+      title.textContent = 'Processing dataset...';
+      sub.textContent = 'Analyzing 142 resources across 3 AWS regions';
+      zone.style.borderColor = 'rgba(0, 180, 255, 0.5)';
+      zone.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        // Success state
+        icon.textContent = '✅';
+        title.textContent = 'aws_cost_data_march_2026.csv loaded';
+        sub.textContent = '142 resources • $47,250 total spend • 23 optimization opportunities found';
+        zone.style.borderColor = 'rgba(0, 255, 136, 0.5)';
+        zone.style.background = 'rgba(0, 255, 136, 0.05)';
+
+        // Show report and slider with animation
+        setTimeout(() => {
+          const reportSection = document.getElementById('report-section');
+          const sliderSection = document.getElementById('slider-section');
+          reportSection.style.display = 'block';
+          reportSection.style.opacity = '0';
+          reportSection.style.transform = 'translateY(20px)';
+          reportSection.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+          sliderSection.style.display = 'block';
+          sliderSection.style.opacity = '0';
+          sliderSection.style.transform = 'translateY(20px)';
+          sliderSection.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+          requestAnimationFrame(() => {
+            reportSection.style.opacity = '1';
+            reportSection.style.transform = 'translateY(0)';
+
+            setTimeout(() => {
+              sliderSection.style.opacity = '1';
+              sliderSection.style.transform = 'translateY(0)';
+            }, 200);
+          });
+        }, 300);
+      }, 1500);
+    }
+
+    // --- CFO Mode Toggle ---
+    let demoCFOMode = false;
+
+    function toggleDemoCFO() {
+      demoCFOMode = !demoCFOMode;
+      const toggle = document.getElementById('demo-cfoToggle');
+      const engLabel = document.getElementById('demo-engLabel');
+      const cfoLabel = document.getElementById('demo-cfoLabel');
+      const texts = document.querySelectorAll('.demo-cfo-text');
+
+      toggle.classList.toggle('active', demoCFOMode);
+
+      engLabel.className = 'text-xs font-600 ' + (demoCFOMode ? 'text-slate-500' : 'text-emerald-400');
+      cfoLabel.className = 'text-xs font-600 ' + (demoCFOMode ? 'text-blue-400' : 'text-slate-500');
+
+      texts.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(5px)';
+        setTimeout(() => {
+          el.textContent = demoCFOMode ? el.dataset.cfo : el.dataset.engineer;
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 150);
+      });
+    }
+
+    // Make text transitions smooth
+    document.querySelectorAll('.demo-cfo-text').forEach(el => {
+      el.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+    });
+
+    // --- Savings Slider ---
+    const BASE_COST = 47250;
+    const MAX_SAVINGS = {
+      ec2: 8400,
+      rds: 4200,
+      ebs: 2100,
+      ri: 4750
+    };
+
+    function updateSavings(percent) {
+      const p = percent / 100;
+      document.getElementById('slider-value').textContent = percent + '%';
+
+      const ec2 = Math.round(MAX_SAVINGS.ec2 * p);
+      const rds = Math.round(MAX_SAVINGS.rds * p);
+      const ebs = Math.round(MAX_SAVINGS.ebs * p);
+      const ri = Math.round(MAX_SAVINGS.ri * p);
+      const totalSavings = ec2 + rds + ebs + ri;
+      const optimized = BASE_COST - totalSavings;
+      const savingsPercent = ((totalSavings / BASE_COST) * 100).toFixed(1);
+
+      document.getElementById('action-ec2').textContent = '-$' + ec2.toLocaleString();
+      document.getElementById('action-rds').textContent = '-$' + rds.toLocaleString();
+      document.getElementById('action-ebs').textContent = '-$' + ebs.toLocaleString();
+      document.getElementById('action-ri').textContent = '-$' + ri.toLocaleString();
+      document.getElementById('optimized-cost').textContent = '$' + optimized.toLocaleString();
+      document.getElementById('total-savings').textContent = '$' + totalSavings.toLocaleString();
+      document.getElementById('savings-percent').textContent = savingsPercent + '%';
+    }
+
+    // Initialize slider
+    updateSavings(50);
+  </script>
+</body>
+</html>

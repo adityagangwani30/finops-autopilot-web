@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — FinOps Autopilot</title>
+  <meta name="description" content="Learn how FinOps Autopilot works: system architecture, methodology, workflow pipeline, and tech stack for AI-powered cloud cost optimization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-bold">
+        <span class="text-2xl">🚀</span>
+        <span class="gradient-text">FinOps Autopilot</span>
+      </a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="nav-links" class="nav-links flex items-center gap-1">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="architecture.html" class="nav-link">How It Works</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="future.html" class="nav-link">Roadmap</a>
+        <a href="team.html" class="nav-link">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="hero-bg pt-32 pb-20 px-6">
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <div class="reveal">
+        <span class="section-label section-label-blue mb-4 inline-block">⚙️ Under the Hood</span>
+        <h1 class="text-4xl md:text-6xl font-900 mt-4">
+          How It <span class="gradient-text-2">Works</span>
+        </h1>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">From raw cost data to actionable savings — here's the engine behind FinOps Autopilot.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORKFLOW PIPELINE ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-green mb-4 inline-block">🔄 Workflow</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">The <span class="gradient-text">Pipeline</span></h2>
+        <p class="text-slate-400 mt-4 max-w-xl mx-auto">Five stages. One intelligent flow.</p>
+      </div>
+
+      <!-- Pipeline (horizontal on desktop, vertical on mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto reveal-stagger">
+        <!-- Monitor -->
+        <div class="glass-card p-6 text-center relative overflow-visible">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-500/10 flex items-center justify-center text-2xl mb-3">📡</div>
+          <h3 class="font-700 text-sm">Monitor</h3>
+          <p class="text-slate-500 text-xs mt-1">Ingest data</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -1.5rem; width: 1.5rem; background: linear-gradient(90deg, #00ff88, #00b4ff); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Analyze -->
+        <div class="glass-card glass-card-blue p-6 text-center relative overflow-visible">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-2xl mb-3">🔍</div>
+          <h3 class="font-700 text-sm">Analyze</h3>
+          <p class="text-slate-500 text-xs mt-1">Find waste</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -1.5rem; width: 1.5rem; background: linear-gradient(90deg, #00b4ff, #a855f7); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Recommend -->
+        <div class="glass-card p-6 text-center relative overflow-visible">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-purple-500/10 flex items-center justify-center text-2xl mb-3">🤖</div>
+          <h3 class="font-700 text-sm">Recommend</h3>
+          <p class="text-slate-500 text-xs mt-1">AI insights</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -1.5rem; width: 1.5rem; background: linear-gradient(90deg, #a855f7, #f59e0b); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Simulate -->
+        <div class="glass-card glass-card-blue p-6 text-center relative overflow-visible">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/10 flex items-center justify-center text-2xl mb-3">🎮</div>
+          <h3 class="font-700 text-sm">Simulate</h3>
+          <p class="text-slate-500 text-xs mt-1">What-If</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -1.5rem; width: 1.5rem; background: linear-gradient(90deg, #f59e0b, #ec4899); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Explain -->
+        <div class="glass-card p-6 text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-pink-500/10 flex items-center justify-center text-2xl mb-3">📢</div>
+          <h3 class="font-700 text-sm">Explain</h3>
+          <p class="text-slate-500 text-xs mt-1">Dual output</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider max-w-5xl mx-auto"></div>
+
+  <!-- ========== METHODOLOGY (5 Steps) ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-blue mb-4 inline-block">🧩 Methodology</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">Deep Dive: <span class="gradient-text-2">5 Steps</span></h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <!-- Step 1 -->
+        <div class="glass-card p-8 flex gap-6 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-xl flex-shrink-0 font-800 text-emerald-400">1</div>
+          <div>
+            <h3 class="text-xl font-700 mb-2">Data Input</h3>
+            <p class="text-slate-400">Use a structured dataset representing AWS usage and cost. Accepts CSV files containing service type, instance IDs, usage metrics, and billing data.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">CSV Upload</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">AWS Cost Data</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Mock Dataset</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card glass-card-blue p-8 flex gap-6 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-xl flex-shrink-0 font-800 text-blue-400">2</div>
+          <div>
+            <h3 class="text-xl font-700 mb-2">Data Analysis</h3>
+            <p class="text-slate-400">Identify idle resources, over-provisioned services, and unused storage. Pattern recognition flags resources with consistently low utilization.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Idle Detection</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Right-Sizing</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Storage Audit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card p-8 flex gap-6 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-xl flex-shrink-0 font-800 text-purple-400">3</div>
+          <div>
+            <h3 class="text-xl font-700 mb-2">AI-Based Recommendation</h3>
+            <p class="text-slate-400">Use LLM to generate optimization suggestions, estimate savings, and explain reasoning. Each recommendation includes priority, confidence, and expected impact.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">LLM Analysis</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Savings Estimate</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Priority Ranking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-card glass-card-blue p-8 flex gap-6 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-xl flex-shrink-0 font-800 text-amber-400">4</div>
+          <div>
+            <h3 class="text-xl font-700 mb-2">Simulation Engine</h3>
+            <p class="text-slate-400">Apply predefined savings logic and calculate new cost after selected actions. Users can mix and match optimizations to preview combined impact.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">What-If Scenarios</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Cost Calculator</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Visual Comparison</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="glass-card p-8 flex gap-6 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-pink-500/10 flex items-center justify-center text-xl flex-shrink-0 font-800 text-pink-400">5</div>
+          <div>
+            <h3 class="text-xl font-700 mb-2">Dual Output Generation</h3>
+            <p class="text-slate-400">Engineer Mode provides technical explanations with instance IDs, metric thresholds, and configuration changes. CFO Mode delivers business explanations with ROI, budget impact, and cost trends.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">Engineer View</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">CFO View</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400">NLP Reports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider max-w-5xl mx-auto"></div>
+
+  <!-- ========== SYSTEM ARCHITECTURE DIAGRAM ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-green mb-4 inline-block">🏗️ Architecture</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">System <span class="gradient-text">Architecture</span></h2>
+      </div>
+
+      <div class="reveal">
+        <div class="glass-card-static p-10 space-y-4">
+          <!-- Layer 1 -->
+          <div class="bg-slate-800/60 rounded-xl p-5 text-center border border-slate-700/50">
+            <div class="text-sm text-slate-400 uppercase tracking-wider mb-1">Input</div>
+            <div class="text-lg font-700">📁 CSV / Simulated AWS Data</div>
+          </div>
+          <div class="flex justify-center"><div class="w-0.5 h-8 bg-gradient-to-b from-emerald-500/40 to-blue-500/40"></div></div>
+
+          <!-- Layer 2 -->
+          <div class="bg-emerald-500/5 rounded-xl p-5 text-center border border-emerald-500/20">
+            <div class="text-sm text-emerald-400 uppercase tracking-wider mb-1">Processing</div>
+            <div class="text-lg font-700">⚙️ Data Processing Layer</div>
+          </div>
+          <div class="flex justify-center"><div class="w-0.5 h-8 bg-gradient-to-b from-emerald-500/40 to-blue-500/40"></div></div>
+
+          <!-- Layer 3 -->
+          <div class="bg-blue-500/5 rounded-xl p-5 text-center border border-blue-500/20">
+            <div class="text-sm text-blue-400 uppercase tracking-wider mb-1">Intelligence</div>
+            <div class="text-lg font-700">🧠 AI Analysis Engine (LLM)</div>
+          </div>
+          <div class="flex justify-center"><div class="w-0.5 h-8 bg-gradient-to-b from-blue-500/40 to-purple-500/40"></div></div>
+
+          <!-- Layer 4 -->
+          <div class="bg-purple-500/5 rounded-xl p-5 text-center border border-purple-500/20">
+            <div class="text-sm text-purple-400 uppercase tracking-wider mb-1">Optimization</div>
+            <div class="text-lg font-700">🎯 Recommendation Engine</div>
+          </div>
+          <div class="flex justify-center"><div class="w-0.5 h-8 bg-gradient-to-b from-purple-500/40 to-amber-500/40"></div></div>
+
+          <!-- Layer 5 -->
+          <div class="bg-amber-500/5 rounded-xl p-5 text-center border border-amber-500/20">
+            <div class="text-sm text-amber-400 uppercase tracking-wider mb-1">Simulation</div>
+            <div class="text-lg font-700">🔁 What-If Simulator</div>
+          </div>
+          <div class="flex justify-center"><div class="w-0.5 h-8 bg-gradient-to-b from-amber-500/40 to-pink-500/40"></div></div>
+
+          <!-- Layer 6 -->
+          <div class="bg-pink-500/5 rounded-xl p-5 text-center border border-pink-500/20">
+            <div class="text-sm text-pink-400 uppercase tracking-wider mb-1">Presentation</div>
+            <div class="text-lg font-700">🖥️ User Interface Dashboard</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider max-w-5xl mx-auto"></div>
+
+  <!-- ========== TECH STACK ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-blue mb-4 inline-block">🛠️ Tech Stack</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">Built <span class="gradient-text-2">With</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl mb-4">🎨</div>
+          <h3 class="font-700 mb-2">Frontend</h3>
+          <div class="space-y-1 text-sm text-slate-400">
+            <div>HTML5</div>
+            <div>Tailwind CSS</div>
+            <div>Streamlit</div>
+          </div>
+        </div>
+
+        <div class="glass-card glass-card-blue p-8 text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-3xl mb-4">⚡</div>
+          <h3 class="font-700 mb-2">Backend</h3>
+          <div class="space-y-1 text-sm text-slate-400">
+            <div>Python</div>
+            <div>Data Processing</div>
+            <div>REST APIs</div>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-4">🧠</div>
+          <h3 class="font-700 mb-2">AI</h3>
+          <div class="space-y-1 text-sm text-slate-400">
+            <div>LLM API</div>
+            <div>OpenAI</div>
+            <div>Amazon Bedrock*</div>
+          </div>
+        </div>
+
+        <div class="glass-card glass-card-blue p-8 text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-4">📊</div>
+          <h3 class="font-700 mb-2">Data</h3>
+          <div class="space-y-1 text-sm text-slate-400">
+            <div>Mock AWS CSV</div>
+            <div>Cost Explorer*</div>
+            <div>Structured Dataset</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-slate-500 mt-8 reveal">* Simulated for demo purposes</p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🚀</span>
+        <span class="gradient-text font-bold">FinOps Autopilot</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+        <a href="features.html" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
+        <a href="architecture.html" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a>
+        <a href="demo.html" class="text-sm text-slate-400 hover:text-white transition-colors">Demo</a>
+        <a href="future.html" class="text-sm text-slate-400 hover:text-white transition-colors">Roadmap</a>
+        <a href="team.html" class="text-sm text-slate-400 hover:text-white transition-colors">Team</a>
+      </div>
+      <p class="text-sm text-slate-500">© 2026 FinOps Autopilot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

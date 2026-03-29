@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features & Innovations — FinOps Autopilot</title>
+  <meta name="description" content="Explore FinOps Autopilot's key innovations: What-If Simulator, CFO Mode with dual AI perspectives, and AI-powered cost optimization features.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-bold">
+        <span class="text-2xl">🚀</span>
+        <span class="gradient-text">FinOps Autopilot</span>
+      </a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="nav-links" class="nav-links flex items-center gap-1">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="architecture.html" class="nav-link">How It Works</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="future.html" class="nav-link">Roadmap</a>
+        <a href="team.html" class="nav-link">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="hero-bg pt-32 pb-20 px-6">
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <div class="reveal">
+        <span class="section-label section-label-green mb-4 inline-block">✨ Innovations</span>
+        <h1 class="text-4xl md:text-6xl font-900 mt-4">
+          Features That Make It <span class="gradient-text">WOW</span>
+        </h1>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">Two game-changing innovations that set FinOps Autopilot apart from every other cost management tool.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT-IF SIMULATOR ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="reveal">
+          <span class="section-label section-label-green mb-4 inline-block">🔁 WOW Feature #1</span>
+          <h2 class="text-3xl md:text-5xl font-800 mt-4 mb-6">What-If <span class="gradient-text">Simulator</span></h2>
+          <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+            An interactive engine that lets you simulate optimization actions and <strong class="text-white">instantly see the financial impact</strong> — before committing to any changes.
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">🛑</div>
+              <div>
+                <h4 class="font-600 mb-1">Stop Idle EC2 Instances</h4>
+                <p class="text-slate-400 text-sm">Identify and simulate shutting down instances with &lt;5% utilization.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">🗑️</div>
+              <div>
+                <h4 class="font-600 mb-1">Delete Unused Storage</h4>
+                <p class="text-slate-400 text-sm">Find EBS volumes and S3 buckets that haven't been accessed in months.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">🔄</div>
+              <div>
+                <h4 class="font-600 mb-1">Switch to Reserved Instances</h4>
+                <p class="text-slate-400 text-sm">Preview savings from converting on-demand to 1-year or 3-year reservations.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="demo.html" class="btn-glow btn-glow-green">Try It Live →</a>
+        </div>
+
+        <!-- Right: Mock Simulator Card -->
+        <div class="reveal">
+          <div class="glass-card-static p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="font-700 text-lg">Simulation Preview</h3>
+                <div class="pulse-dot"></div>
+              </div>
+
+              <!-- Before -->
+              <div class="bg-slate-800/50 rounded-xl p-5 mb-4">
+                <div class="text-sm text-slate-400 mb-1">Current Monthly Cost</div>
+                <div class="text-3xl font-800 text-red-400">$47,250</div>
+              </div>
+
+              <!-- Actions -->
+              <div class="space-y-3 mb-4">
+                <div class="flex items-center justify-between bg-emerald-500/5 rounded-lg p-3 border border-emerald-500/10">
+                  <span class="text-sm">✅ Stop 12 idle EC2 instances</span>
+                  <span class="text-sm font-600 text-emerald-400">−$8,400</span>
+                </div>
+                <div class="flex items-center justify-between bg-blue-500/5 rounded-lg p-3 border border-blue-500/10">
+                  <span class="text-sm">✅ Delete 340GB unused EBS</span>
+                  <span class="text-sm font-600 text-blue-400">−$2,100</span>
+                </div>
+                <div class="flex items-center justify-between bg-purple-500/5 rounded-lg p-3 border border-purple-500/10">
+                  <span class="text-sm">✅ Switch to Reserved (3 instances)</span>
+                  <span class="text-sm font-600 text-purple-400">−$4,750</span>
+                </div>
+              </div>
+
+              <!-- After -->
+              <div class="bg-emerald-500/5 rounded-xl p-5 border border-emerald-500/10">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <div class="text-sm text-slate-400 mb-1">Optimized Monthly Cost</div>
+                    <div class="text-3xl font-800 text-emerald-400">$32,000</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-sm text-slate-400 mb-1">Total Savings</div>
+                    <div class="text-2xl font-800 text-emerald-400">32.3%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider max-w-5xl mx-auto"></div>
+
+  <!-- ========== CFO MODE ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Toggle Demo -->
+        <div class="order-2 lg:order-1 reveal">
+          <div class="glass-card-static p-8">
+            <!-- Toggle -->
+            <div class="flex items-center justify-center gap-4 mb-8">
+              <span id="engLabel" class="text-sm font-600 text-emerald-400">👨‍💻 Engineer</span>
+              <div id="cfoToggle" class="toggle-track" onclick="toggleCFOMode()">
+                <div class="toggle-thumb"></div>
+              </div>
+              <span id="cfoLabel" class="text-sm font-600 text-slate-500">💼 CFO</span>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="space-y-4">
+              <div class="bg-slate-800/50 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">🔴</div>
+                  <span class="text-sm font-600">High Priority</span>
+                </div>
+                <p class="cfo-text text-slate-300" data-engineer="Terminate 12 idle EC2 instances (t3.large) in us-east-1 with avg CPU &lt;3% over 30 days to reduce compute waste." data-cfo="Reduce monthly compute waste by eliminating 12 unused servers, saving $8,400/month ($100,800/year) with zero operational impact.">
+                  Terminate 12 idle EC2 instances (t3.large) in us-east-1 with avg CPU &lt;3% over 30 days to reduce compute waste.
+                </p>
+              </div>
+
+              <div class="bg-slate-800/50 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">🟡</div>
+                  <span class="text-sm font-600">Medium Priority</span>
+                </div>
+                <p class="cfo-text text-slate-300" data-engineer="Right-size 8 over-provisioned RDS instances from db.r5.2xlarge to db.r5.large based on 90-day performance metrics." data-cfo="Optimize database spending by matching capacity to actual usage, recovering $4,200/month in over-allocated resources.">
+                  Right-size 8 over-provisioned RDS instances from db.r5.2xlarge to db.r5.large based on 90-day performance metrics.
+                </p>
+              </div>
+
+              <div class="bg-slate-800/50 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">🔵</div>
+                  <span class="text-sm font-600">Opportunity</span>
+                </div>
+                <p class="cfo-text text-slate-300" data-engineer="Convert 5 on-demand m5.xlarge instances to 1-year Reserved Instances (no upfront) for a predictable workload cluster." data-cfo="Lock in a 40% discount on 5 critical servers by committing to annual pricing — saving $4,750/month with guaranteed capacity.">
+                  Convert 5 on-demand m5.xlarge instances to 1-year Reserved Instances (no upfront) for a predictable workload cluster.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="order-1 lg:order-2 reveal">
+          <span class="section-label section-label-blue mb-4 inline-block">💼 WOW Feature #2</span>
+          <h2 class="text-3xl md:text-5xl font-800 mt-4 mb-6">CFO Mode <span class="gradient-text-2">(Dual AI)</span></h2>
+          <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+            A single toggle that transforms every recommendation from technical jargon into <strong class="text-white">business-focused language</strong>. Because your CFO doesn't speak "t3.large."
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">👨‍💻</div>
+              <div>
+                <h4 class="font-600 mb-1 text-emerald-400">Engineer Mode</h4>
+                <p class="text-slate-400 text-sm">"Terminate idle EC2 instances to reduce compute usage"</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">💼</div>
+              <div>
+                <h4 class="font-600 mb-1 text-blue-400">CFO Mode</h4>
+                <p class="text-slate-400 text-sm">"Reduce compute waste to save $5,000 per month"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 glass-card-static p-5 border-l-4 border-emerald-500/40">
+            <p class="text-sm text-slate-400"><strong class="text-white">Why it matters:</strong> Bridges the gap between technical and financial stakeholders. Makes cloud cost insights accessible to non-technical executives without losing engineering precision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider max-w-5xl mx-auto"></div>
+
+  <!-- ========== ALL FEATURES GRID ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-green mb-4 inline-block">📊 Full Feature Set</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">Everything You <span class="gradient-text">Need</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        <div class="glass-card p-8">
+          <div class="text-3xl mb-4">📈</div>
+          <h3 class="text-lg font-700 mb-2">Cost Analysis Dashboard</h3>
+          <p class="text-slate-400 text-sm">Comprehensive breakdown of your cloud spending by service, region, and resource type with trend analysis.</p>
+        </div>
+
+        <div class="glass-card glass-card-blue p-8">
+          <div class="text-3xl mb-4">🤖</div>
+          <h3 class="text-lg font-700 mb-2">AI-Powered Recommendations</h3>
+          <p class="text-slate-400 text-sm">LLM-generated optimization suggestions with estimated savings, reasoning, and priority levels.</p>
+        </div>
+
+        <div class="glass-card p-8">
+          <div class="text-3xl mb-4">🔁</div>
+          <h3 class="text-lg font-700 mb-2">What-If Simulation Engine</h3>
+          <p class="text-slate-400 text-sm">Simulate actions like stopping instances or changing pricing models and see instant cost impact.</p>
+        </div>
+
+        <div class="glass-card glass-card-blue p-8">
+          <div class="text-3xl mb-4">💼</div>
+          <h3 class="text-lg font-700 mb-2">CFO Mode (Dual Insights)</h3>
+          <p class="text-slate-400 text-sm">Toggle between engineer-focused technical details and CFO-friendly business metrics on every recommendation.</p>
+        </div>
+
+        <div class="glass-card p-8">
+          <div class="text-3xl mb-4">📢</div>
+          <h3 class="text-lg font-700 mb-2">Natural Language Reports</h3>
+          <p class="text-slate-400 text-sm">AI-generated summaries in plain English that explain cost trends, savings opportunities, and action items.</p>
+        </div>
+
+        <div class="glass-card glass-card-blue p-8">
+          <div class="text-3xl mb-4">🔄</div>
+          <h3 class="text-lg font-700 mb-2">Continuous Monitoring</h3>
+          <p class="text-slate-400 text-sm">Always-on analysis that catches cost anomalies and new optimization opportunities as they emerge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🚀</span>
+        <span class="gradient-text font-bold">FinOps Autopilot</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+        <a href="features.html" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
+        <a href="architecture.html" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a>
+        <a href="demo.html" class="text-sm text-slate-400 hover:text-white transition-colors">Demo</a>
+        <a href="future.html" class="text-sm text-slate-400 hover:text-white transition-colors">Roadmap</a>
+        <a href="team.html" class="text-sm text-slate-400 hover:text-white transition-colors">Team</a>
+      </div>
+      <p class="text-sm text-slate-500">© 2026 FinOps Autopilot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // CFO Mode Toggle for Features Page
+    let isCFOMode = false;
+
+    function toggleCFOMode() {
+      isCFOMode = !isCFOMode;
+      const toggle = document.getElementById('cfoToggle');
+      const engLabel = document.getElementById('engLabel');
+      const cfoLabel = document.getElementById('cfoLabel');
+      const texts = document.querySelectorAll('.cfo-text');
+
+      toggle.classList.toggle('active', isCFOMode);
+      engLabel.classList.toggle('text-emerald-400', !isCFOMode);
+      engLabel.classList.toggle('text-slate-500', isCFOMode);
+      cfoLabel.classList.toggle('text-blue-400', isCFOMode);
+      cfoLabel.classList.toggle('text-slate-500', !isCFOMode);
+
+      texts.forEach(el => {
+        el.textContent = isCFOMode ? el.dataset.cfo : el.dataset.engineer;
+      });
+    }
+  </script>
+</body>
+</html>

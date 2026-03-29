@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinOps Autopilot — AI-Powered Cloud Cost Optimization</title>
+  <meta name="description" content="FinOps Autopilot: AI-powered cloud cost optimization with interactive simulation. Smarter Cloud. Lower Costs. Better Decisions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-bold">
+        <span class="text-2xl">🚀</span>
+        <span class="gradient-text">FinOps Autopilot</span>
+      </a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="nav-links" class="nav-links flex items-center gap-1">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="architecture.html" class="nav-link">How It Works</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="future.html" class="nav-link">Roadmap</a>
+        <a href="team.html" class="nav-link">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-bg min-h-screen flex items-center justify-center pt-20">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div class="reveal">
+        <span class="section-label section-label-green mb-6 inline-block">AI-Powered Cloud FinOps</span>
+      </div>
+
+      <h1 class="reveal text-5xl md:text-7xl lg:text-8xl font-900 leading-tight mb-6">
+        <span class="gradient-text">FinOps</span>
+        <br>
+        <span class="text-white">Autopilot</span>
+      </h1>
+
+      <p class="reveal text-lg md:text-2xl text-slate-400 max-w-2xl mx-auto mb-10 font-light">
+        Smarter Cloud. Lower Costs. Better Decisions.
+      </p>
+
+      <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="demo.html" class="btn-glow btn-glow-green">
+          🎮 Try the Simulator
+        </a>
+        <a href="features.html" class="btn-outline">
+          Explore Features →
+        </a>
+      </div>
+
+      <!-- Hero Metrics -->
+      <div class="reveal mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div class="glass-card p-6 text-center">
+          <div class="text-3xl font-800 gradient-text" data-counter="35" data-suffix="%" data-prefix="">0%</div>
+          <div class="text-sm text-slate-400 mt-2">Cloud Spend Wasted</div>
+        </div>
+        <div class="glass-card glass-card-blue p-6 text-center">
+          <div class="text-3xl font-800 gradient-text-2" data-counter="40" data-suffix="%" data-prefix="~">0%</div>
+          <div class="text-sm text-slate-400 mt-2">Potential Savings</div>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <div class="text-3xl font-800 gradient-text-3" data-counter="5" data-suffix="x">0x</div>
+          <div class="text-sm text-slate-400 mt-2">Faster Decisions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE PROBLEM ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-blue mb-4 inline-block">⚠️ The Problem</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">Cloud Cost Management is <span class="gradient-text">Broken</span></h2>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">Teams are bleeding money on cloud infrastructure without even knowing it.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+        <!-- Card 1 -->
+        <div class="glass-card p-8">
+          <div class="icon-circle bg-red-500/10 text-red-400 mb-6">💀</div>
+          <h3 class="text-xl font-700 mb-3">Zombie Resources</h3>
+          <p class="text-slate-400 leading-relaxed">Teams provision resources but forget to decommission them. These "zombie" instances keep running — and charging — indefinitely.</p>
+          <div class="mt-6 flex items-center gap-2 text-sm text-red-400">
+            <div class="w-2 h-2 rounded-full bg-red-400"></div>
+            Forgotten provisioning
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card glass-card-blue p-8">
+          <div class="icon-circle bg-amber-500/10 text-amber-400 mb-6">📈</div>
+          <h3 class="text-xl font-700 mb-3">Over-Allocation</h3>
+          <p class="text-slate-400 leading-relaxed">Compute resources are routinely over-allocated "just in case." Most instances run at less than 20% average utilization.</p>
+          <div class="mt-6 flex items-center gap-2 text-sm text-amber-400">
+            <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+            Wasted compute
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card p-8">
+          <div class="icon-circle bg-purple-500/10 text-purple-400 mb-6">🔌</div>
+          <h3 class="text-xl font-700 mb-3">Visibility Gap</h3>
+          <p class="text-slate-400 leading-relaxed">Finance teams lack technical visibility into cloud spend. Engineering teams lack time for cost optimization. The gap keeps growing.</p>
+          <div class="mt-6 flex items-center gap-2 text-sm text-purple-400">
+            <div class="w-2 h-2 rounded-full bg-purple-400"></div>
+            Disconnected teams
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REAL-WORLD IMPACT ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass-card-static p-10 md:p-16 text-center reveal" style="background: linear-gradient(135deg, rgba(0,255,136,0.03), rgba(0,180,255,0.03)); border: 1px solid rgba(0,255,136,0.1);">
+        <span class="section-label section-label-green mb-6 inline-block">💰 Real-World Impact</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4 mb-8">
+          On a <span class="gradient-text">$1M/month</span> cloud bill…
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          <div>
+            <div class="text-5xl md:text-7xl font-900 text-red-400" data-counter="280" data-prefix="$" data-suffix="K">$0K</div>
+            <div class="text-slate-400 mt-2 text-lg">Wasted Every Month</div>
+          </div>
+          <div class="text-4xl text-slate-600 hidden md:block">→</div>
+          <div>
+            <div class="text-5xl md:text-7xl font-900 gradient-text" data-counter="3.36" data-prefix="$" data-suffix="M" data-decimals="2">$0M</div>
+            <div class="text-slate-400 mt-2 text-lg">Wasted Per Year</div>
+          </div>
+        </div>
+
+        <p class="text-slate-400 mt-10 text-lg max-w-xl mx-auto">
+          Budget overruns, reduced ROI, operational inefficiencies — all from preventable cloud waste. There's a better way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUICK SOLUTION ========== -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="section-label section-label-green mb-4 inline-block">🚀 The Solution</span>
+        <h2 class="text-3xl md:text-5xl font-800 mt-4">Three Steps to <span class="gradient-text">Smarter Spending</span></h2>
+        <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">FinOps Autopilot continuously monitors, analyzes, and optimizes your cloud costs.</p>
+      </div>
+
+      <!-- 3-Step Pipeline -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal-stagger">
+        <!-- Step 1 -->
+        <div class="glass-card p-8 text-center relative overflow-visible">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl mb-4">🔍</div>
+          <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Step 1</div>
+          <h3 class="text-lg font-700 mb-2">Continuously Analyze</h3>
+          <p class="text-slate-400 text-sm">Ingests your AWS cost data and identifies idle resources, over-provisioned services, and unused storage.</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -2rem; width: 2rem; background: linear-gradient(90deg, #00ff88, #00b4ff); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card glass-card-blue p-8 text-center relative overflow-visible">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center text-3xl mb-4">🤖</div>
+          <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Step 2</div>
+          <h3 class="text-lg font-700 mb-2">Generate Recommendations</h3>
+          <p class="text-slate-400 text-sm">Uses AI to produce actionable optimization suggestions with estimated savings and clear reasoning.</p>
+          <div class="hidden md:block absolute top-1/2 h-0.5" style="right: -2rem; width: 2rem; background: linear-gradient(90deg, #00b4ff, #a855f7); opacity: 0.6;"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card p-8 text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-4">🎮</div>
+          <div class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Step 3</div>
+          <h3 class="text-lg font-700 mb-2">Simulate Actions</h3>
+          <p class="text-slate-400 text-sm">Run "What-If" scenarios to see the financial impact of optimizations before executing them.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16 reveal">
+        <a href="features.html" class="btn-glow btn-glow-blue">
+          See All Features →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🚀</span>
+        <span class="gradient-text font-bold">FinOps Autopilot</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+        <a href="features.html" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
+        <a href="architecture.html" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a>
+        <a href="demo.html" class="text-sm text-slate-400 hover:text-white transition-colors">Demo</a>
+        <a href="future.html" class="text-sm text-slate-400 hover:text-white transition-colors">Roadmap</a>
+        <a href="team.html" class="text-sm text-slate-400 hover:text-white transition-colors">Team</a>
+      </div>
+      <p class="text-sm text-slate-500">© 2026 FinOps Autopilot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
